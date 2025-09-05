@@ -1,0 +1,295 @@
+:root {
+    --color-primary:#FBF6D8;
+    --color-secondary:#23181C;
+
+    --color-background-color:#FBF6D8;
+    --color-text:#23181C;
+    --font-base: 1rem;
+    --space:2rem;
+    --radius:10px;
+
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+}
+
+body {
+  background: var(--color-secondary);
+}
+
+/*STYLING NAVIGATION BAR*/.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--color-primary); 
+  padding: 0.5rem 2rem;}
+/*LOGO STYLING*/ .logo-icon {
+  height: 33px;
+  width: 100px; }
+
+/*this is to make the list nằm ngang thay vì nằm dọc*/
+.navbar {
+  position: fixed;
+  top: 0;              /* stick to the top */
+  left: 0;
+  width: 100%;         /* make navbar span the full width */
+  display: flex;       /* enable flexbox */
+  justify-content: space-between; /* spread logo + links */
+  align-items: center; /* vertically align */
+  padding: 0.8rem 1.2rem;  /* some spacing */
+  background: var(--color-background-color);   /* optional, so content doesn’t overlap */
+  z-index: 1000;       /* stay above other elements */
+}
+.nav-links a,
+.nav-links a:visited,
+.nav-links a:hover,
+.nav-links {
+  font-family: "Noticia Text", serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 1.3rem;
+  list-style: none;
+  color: var(--color-secondary);
+  display: flex;
+  gap: 2rem;
+  text-decoration: none;
+  /* remove position: fixed */
+}
+
+/*WORKS DISPLAY STYLING*/
+.image-wrapper {
+  height: calc(100vh - 60px); /* full height minus navbar */
+  display: flex;
+  justify-content: center; /* center horizontally */
+  align-items: center;     /* center vertically */
+  overflow: hidden;        /* prevent scrolling on desktop */
+}
+
+.image-container {
+  display: flex;
+  flex-direction: column; /* stack vertically by default */
+  align-items: center;
+  gap: 10rem;
+}
+
+.image-container img {
+  width: 40vw;
+  height: 40vw;
+  object-fit: cover;
+  box-shadow: 4px 4px 10px rgba(19, 0, 0, 0.954);
+}
+
+
+/*BACKGROUND*/
+body.home {
+  background: url("images/indexdesktop.png") no-repeat center center fixed;
+  background-size: cover;}
+body.about {
+  background: url("images/aboutdesktop.png") no-repeat center center fixed;
+  background-size: cover;}
+body.works {
+  background: url("images/workdesktop.png") no-repeat center center fixed;
+  background-size: cover;}
+body.worksss {
+  background: url("images/worksssdesktop.png") no-repeat center center fixed;
+  background-size: cover;}
+
+/* GALLERY CONTAINER */
+.gallery {
+  height: calc(100vh - 0px); /* full height minus navbar */
+  display: flex;
+  flex-direction: row;     /* stack vertically on desktop   /* center vertically */
+  align-items: center;        /* center horizontally */
+  gap: 5rem;
+  overflow-x: auto;           /* horizontal scroll */
+  overflow-y: hidden;          /* no scroll on desktop */
+  scroll-snap-type: x mandatory; 
+}
+
+.gallery img {
+  width: 30vw;
+  height: auto;
+}
+
+h1 { 
+font-family: "Noticia Text", serif;
+font-weight: 700;
+font-style: normal;
+position: absolute;
+font-size: 2.5rem;
+top: 70px;
+left: 30px;
+color: var(--color-primary);
+text-shadow: 10px 10px 20px rgba(19, 0, 0, 0.954);
+background-color: var(--color-secondary);
+}
+
+h2 { 
+  font-family: "Noticia Text", serif;
+  font-weight: 700;
+  font-style: normal;
+  position: absolute;
+  font-size: 3rem;
+  top:12vh; /* still 70px from the top */
+  left: 50%; /* push to horizontal middle */
+  transform: translateX(-50%); /* adjust back by half its width */
+  color: var(--color-secondary);
+}
+
+p {
+font-family: "Noticia Text", serif;
+font-weight: 700;
+font-style: normal;
+position: absolute;
+font-size: 1rem;
+top: 200px;
+left: 30px;
+width: 50vw;
+background-color: var(--color-secondary);
+color: var(--color-primary);
+
+}
+
+
+/*RESPONSIVE 1024+++*/
+/*DESKTOPS*/
+@media screen and (min-width:1024px) {
+.image-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10rem;}
+.image-container img {
+  position: relative;
+  top:150px;
+  width: 30vw;
+  height: 30vw;
+  object-fit: cover;
+  box-shadow: 4px 4px 10px rgba(19, 0, 0, 0.954);}
+
+/*WORKS HEADING*/
+h2 { 
+  white-space: nowrap;
+  font-family: "Noticia Text", serif;
+  font-weight: 700;
+  font-style: normal;
+  position: absolute;
+  font-size: 3rem;
+  top:12vh; /* still 70px from the top */
+  left: 50%; /* push to horizontal middle */
+  transform: translateX(-50%); /* adjust back by half its width */
+  color: var(--color-secondary);
+}
+
+}
+
+/*TABLETS 676-1024PX*/
+@media screen and (max-width:1024px) {
+body.home {
+  background: url("images/indextablet.png") no-repeat center center fixed;
+  background-size: cover;}
+body.about {
+  background: url("images/abouttablet.png") no-repeat center center fixed;
+  background-size: cover;}
+body.works {
+  background: url("images/worktablet.png") no-repeat center center fixed;
+  background-size: cover;}
+body.worksss {
+background: url("images/workssstablet.png") no-repeat center center fixed;
+background-size: cover;}
+
+.image-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5rem;}
+.image-container img {
+  position: relative;
+  top:150px;
+  width: 70vw;
+  height: 70vw;
+  object-fit: cover;
+  box-shadow: 4px 4px 10px rgba(19, 0, 0, 0.954);}
+
+  /*WORKS STYLING*/
+.gallery {
+  flex-direction: row;      
+  align-items: center;    
+  overflow-x: auto;       
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;   }
+.gallery img {
+  flex: 0 0 auto;
+  width: 80vw;        /* keep responsive width */
+  max-height: 90vh;   /* but don’t exceed screen height */
+  object-fit: contain; /* fit without cropping */
+}
+h2 { 
+  font-family: "Noticia Text", serif;
+  font-weight: 700;
+  font-style: normal;
+  position: absolute;
+  font-size: 2.5rem;
+  top:12vh; /* still 70px from the top */
+  left: 50%; /* push to horizontal middle */
+  transform: translateX(-50%); /* adjust back by half its width */
+  color: var(--color-secondary);
+  white-space: nowrap;  
+}
+
+}
+   
+/*MOBILES 0-767PX*/
+@media screen and (max-width:767px) {
+body.home {
+  background: url("images/indexphone.png") no-repeat center center fixed;
+  background-size: cover;}
+body.about {
+  background: url("images/aboutphone.png") no-repeat center center fixed;
+  background-size: cover;}
+body.works {
+  background: url("images/workphone.png") no-repeat center center fixed;
+  background-size: cover;}
+body.worksss {
+  background: url("images/worksssphone.png") no-repeat center center fixed;
+  background-size: cover;}
+
+.gallery {
+    flex-direction: row;        /* switch to horizontal */
+    align-items: center;    
+    overflow-x: auto;           /* horizontal scroll */
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory; /* snapping when swiping */}
+.gallery img { 
+    width: 80vw;      /* each image fills full width */
+    height: auto;
+    object-fit: cover; /*make it not squezzed*/}
+}
+
+/*MAKE THE OTHER IMAGES INVISIBLE*/
+.gallery img[alt="Work 0"] {
+  visibility: hidden;  /* invisible, but still occupies space */
+}
+
+.image-container img[alt="Endwork"] {
+  width: auto;       /* let it keep its natural aspect ratio */
+  height: auto;      /* no forced square */
+  box-shadow: none;  /* remove drop shadow */
+}
+
+h2 { 
+  font-family: "Noticia Text", serif;
+  font-weight: 700;
+  font-style: normal;
+  position: absolute;
+  font-size: 2.5rem;
+  top:12vh; 
+  left: 50%;
+  transform: translateX(-50%); 
+  color: var(--color-secondary);
+  white-space: nowrap;  
+}

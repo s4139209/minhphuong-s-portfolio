@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>S4139209 Pham Minh Phuong's portfolio</title>
+  <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cal+Sans:wght@400;600;700&family=Noticia+Text:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+</head>
+<body class="worksss">
+  <!--HEADING
+  <h1>HOW TO CARE FOR AN<br> 
+    OLDER LOVED ONES</h1>-->
+
+  <!-- NAVIGATION BAR -->
+  <nav class="navbar">
+    <div class="logo">
+      <!-- Replace with your icon if you have one -->
+      <img src="images/logo.png" alt="logo" class="logo-icon">
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">home</a></li>
+      <li><a href="works.html">works</a></li>
+      <li><a href="about.html">about</a></li>
+    </ul>
+  </nav>
+  <div class="image-container">
+    <img src="images/2.1.png" alt="Square 1">
+    <img src="images/2.2.png" alt="Square 2">
+    <img src="images/2.3.png" alt="Square 3">
+    <img src="images/2.4.png" alt="Square 4">
+    <img src="images/2.5.png" alt="Square 5">
+    <img src="images/endwork.png" alt="Endwork">
+  </div>
+
+
+<script>
+document.addEventListener("scroll", () => {
+  const images = document.querySelectorAll(".image-container img");
+  const center = window.innerHeight / 2; // vertical center of viewport
+
+  images.forEach(img => {
+    const rect = img.getBoundingClientRect();
+    const imgCenter = rect.top + rect.height / 2;
+
+    if (Math.abs(imgCenter - center) < rect.height / 2) {
+      // If image center is close to viewport center → grow
+      img.style.transform = "scale(1.3)";
+      img.style.zIndex = "1"; // bring forward
+    } else {
+      // reset others
+      img.style.transform = "scale(1)";
+      img.style.zIndex = "0";
+    }
+  });
+});
+</script>
+
+
+</body>
+</html>
